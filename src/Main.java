@@ -2,15 +2,81 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        taskOne();
-        taskTwo();
-        taskThree();
-        taskFour();
-        taskFive();
-        taskSix();
-        taskSeven();
-
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
     }
+    //Часть 2
+    public static void task1(){
+        Scanner scanner = new Scanner(System.in);
+        int clientOS = scanner.nextInt();
+        if (clientOS ==0){
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        }
+    }
+    public static void task2(){
+        Scanner scanner = new Scanner(System.in);
+        int clientOS = scanner.nextInt();
+        int clientDeviceYear = scanner.nextInt();
+        String versionOS = clientDeviceYear < 2015 ?
+                "Установите облегченную версию приложения для ":
+                "Установите версию приложения для ";
+        if (clientOS ==0){
+            System.out.println(versionOS + "iOS по ссылке");
+        } else {
+            System.out.println(versionOS + "Android по ссылке");
+        }
+    }
+    public static void task3(){
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        if(year < 1584){
+            System.out.println("Понятие високосный год введено в 1584 году");
+        } else if ((year % 4 ==0) && (year % 100 !=0 || year % 400 ==0)) {
+            System.out.printf("%d год является високосным.",year);
+        } else {
+            System.out.printf("%d год не является високосным.",year);
+        }
+    }
+    public static void task4(){
+        int deliveryDistance = 190;
+        if( deliveryDistance < 20) {
+            System.out.println("Потребуется один день для доставки");
+        } else if(deliveryDistance < 60) {
+            System.out.println("Потребуется два дня для доставки");
+        } else if(deliveryDistance <= 100) {
+            System.out.println("Потребуется три дня для доставки");
+        } else {
+            System.out.println("При удаленности более 100км доставка не производится.");
+        }
+    }
+    public static void task5(){
+        int monthNumber = 152;
+        String season;
+        switch (monthNumber){
+            case 1,2,12 :
+                season = "Сейчас Зима";
+                break;
+            case 3,4,5 :
+                season = "Сейчас Веснаь";
+                break;
+            case 6,7,8 :
+                season = "Сейчас Лето";
+                break;
+            case 9,10,11 :
+                season = "Сейчас Осень";
+                break;
+            default:
+                season = "В году только 12 месяцев.\n\tВведите число от 1 до 12";
+        }
+        System.out.println(season);
+    }
+
+    //Часть 1
     public static void taskOne(){
         Scanner scanner = new Scanner(System.in);
         int age = scanner.nextInt();
